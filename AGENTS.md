@@ -50,6 +50,8 @@ audio VAE + vocoder, duration head.
 
 ## Commands
 ```bash
+# fresh machine: bootstrap env (uv sync reference/.venv + verify + weights check)
+./setup.sh
 # baseline (official pipeline + instrumentation), ~3 min
 PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True reference/.venv/bin/python baseline/run_baseline.py
 # standalone full run, ~5 min; add --block-timing for per-DiT-block GPU timing
@@ -60,6 +62,11 @@ reference/.venv/bin/python standalone/compare.py
 reference/.venv/bin/python standalone/debug_dit.py both   # ref-vs-mine intermediates
 ```
 Frame counts must satisfy `(F-1) % 8 == 0`; H, W divisible by 32.
+
+## Git workflow
+Remote: `git@github.com:lipaul/ltx-nv.git` (branch `main`, SSH key `~/.ssh/id_ed25519_github`).
+Per user instruction: **commit and push after every change** — don't wait to be asked.
+`.gitignore` excludes `reference/` (nested clone + venv) and all run artifacts; never force-add them.
 
 ## Fidelity status
 Standalone matches baseline: TE contexts cos≈1.0 (bf16 noise), scheduler + initial noise +
