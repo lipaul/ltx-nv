@@ -1,0 +1,4 @@
+{
+"patchify_out.bin": {"dtype": "bfloat16", "shape": [3456, 4096]},
+"_end": 0
+}

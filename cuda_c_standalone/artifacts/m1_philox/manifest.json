@@ -1,0 +1,5 @@
+{
+"video_noise.bin": {"dtype": "bfloat16", "shape": [1, 3456, 128]},
+"audio_noise.bin": {"dtype": "bfloat16", "shape": [1, 68, 128]},
+"_end": 0
+}
