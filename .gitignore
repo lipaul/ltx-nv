@@ -1,0 +1,13 @@
+# nested clone of Lightricks/LTX-2 + its uv venv (not ours to publish)
+reference/
+
+# generated run artifacts (large .pt tensors, videos, logs)
+baseline/artifacts/
+standalone/artifacts/
+*.log
+*.raw
+*.wav
+
+__pycache__/
+*.pyc
+.venv/
